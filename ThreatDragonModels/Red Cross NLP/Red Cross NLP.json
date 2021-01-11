@@ -1,17 +1,814 @@
 {
   "summary": {
-    "title": "Red Cross NLP",
-    "owner": "Michael Beale"
+    "title": "New Threat Model"
   },
   "detail": {
     "contributors": [],
     "diagrams": [
       {
         "title": "High Level Overview",
-        "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "thumbnail": "./public/content/images/thumbnail.cia.jpg",
+        "diagramType": "CIA",
+        "id": 0,
+        "$$hashKey": "object:14",
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 435,
+                "y": 425
+              },
+              "angle": 0,
+              "id": "824cc8bd-d3e5-43a4-9e87-fdac61e248df",
+              "z": 1,
+              "hasOpenThreats": false,
+              "description": "Model Weights & Generated CSVs",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Storage/S3"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 100,
+                "y": 50
+              },
+              "angle": 0,
+              "id": "e82fb616-4c81-4f32-960c-870136c95428",
+              "z": 2,
+              "hasOpenThreats": true,
+              "description": "User Token & Session Management",
+              "threats": [
+                {
+                  "ruleId": "0f20e64c-5d03-42ac-b0ae-ed105a38ee1f",
+                  "title": "Generic threat to Confidentiality",
+                  "type": "Confidentiality",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to confidentiality",
+                  "$$hashKey": "object:248"
+                },
+                {
+                  "ruleId": "42511938-37d9-4bb6-866c-947a7c776e7e",
+                  "title": "Generic threat to Integrity",
+                  "type": "Integrity",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to integrity",
+                  "$$hashKey": "object:249"
+                },
+                {
+                  "ruleId": "52453492-f49f-411e-a59d-5fc2dd98664b",
+                  "title": "Generic threat to Availability",
+                  "type": "Availability",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to availability",
+                  "$$hashKey": "object:250"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Backend Server"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 84,
+                "y": 278
+              },
+              "angle": 0,
+              "id": "1774df3c-0796-408a-8960-65535a418811",
+              "z": 3,
+              "hasOpenThreats": false,
+              "description": "Data Ingest Model training & Inference",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Analytics Server"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 526,
+                "y": 46
+              },
+              "angle": 0,
+              "id": "ac38d77e-5589-41ba-b971-d7b9fdaa63df",
+              "z": 4,
+              "hasOpenThreats": true,
+              "description": "User Access Management",
+              "threats": [
+                {
+                  "ruleId": "0f20e64c-5d03-42ac-b0ae-ed105a38ee1f",
+                  "title": "Generic threat to Confidentiality",
+                  "type": "Confidentiality",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to confidentiality",
+                  "$$hashKey": "object:281"
+                },
+                {
+                  "ruleId": "42511938-37d9-4bb6-866c-947a7c776e7e",
+                  "title": "Generic threat to Integrity",
+                  "type": "Integrity",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to integrity",
+                  "$$hashKey": "object:282"
+                },
+                {
+                  "ruleId": "52453492-f49f-411e-a59d-5fc2dd98664b",
+                  "title": "Generic threat to Availability",
+                  "type": "Availability",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to availability",
+                  "$$hashKey": "object:283"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Frontend Server"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 76,
+                "y": 490
+              },
+              "angle": 0,
+              "id": "536c03af-148d-42b1-adf2-63875c814338",
+              "z": 5,
+              "hasOpenThreats": false,
+              "description": "GPU based system used for model training",
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Training Node"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 448,
+                "y": 302
+              },
+              "angle": 0,
+              "id": "f59a7e38-8879-4881-8db1-566d039a1ae4",
+              "z": 6,
+              "hasOpenThreats": false,
+              "description": "Username/Password Token Storage",
+              "storesCredentials": true,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "User Database"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 884,
+                "y": 37
+              },
+              "angle": 0,
+              "id": "87c57d1b-c5c7-4326-9246-0f4d7584882f",
+              "z": 7,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "0f20e64c-5d03-42ac-b0ae-ed105a38ee1f",
+                  "title": "Generic threat to Confidentiality",
+                  "type": "Confidentiality",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to confidentiality",
+                  "$$hashKey": "object:268"
+                },
+                {
+                  "ruleId": "42511938-37d9-4bb6-866c-947a7c776e7e",
+                  "title": "Generic threat to Integrity",
+                  "type": "Integrity",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to integrity",
+                  "$$hashKey": "object:269"
+                },
+                {
+                  "ruleId": "52453492-f49f-411e-a59d-5fc2dd98664b",
+                  "title": "Generic threat to Availability",
+                  "type": "Availability",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to availability",
+                  "$$hashKey": "object:270"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "API Clients"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 884,
+                "y": 334
+              },
+              "angle": 0,
+              "id": "651e4c68-2931-4a68-bbe7-7fb2251dc0db",
+              "z": 8,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "0f20e64c-5d03-42ac-b0ae-ed105a38ee1f",
+                  "title": "Generic threat to Confidentiality",
+                  "type": "Confidentiality",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to confidentiality",
+                  "$$hashKey": "object:294"
+                },
+                {
+                  "ruleId": "42511938-37d9-4bb6-866c-947a7c776e7e",
+                  "title": "Generic threat to Integrity",
+                  "type": "Integrity",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to integrity",
+                  "$$hashKey": "object:295"
+                },
+                {
+                  "ruleId": "52453492-f49f-411e-a59d-5fc2dd98664b",
+                  "title": "Generic threat to Availability",
+                  "type": "Availability",
+                  "modelType": "CIA",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "description": "A generic threat to availability",
+                  "$$hashKey": "object:296"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Web Clients"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "87c57d1b-c5c7-4326-9246-0f4d7584882f"
+              },
+              "target": {
+                "id": "e82fb616-4c81-4f32-960c-870136c95428"
+              },
+              "vertices": [
+                {
+                  "x": 640,
+                  "y": 9
+                }
+              ],
+              "id": "4ec4d2a8-527f-47b8-8f33-51f50a18a615",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "REST API",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 9,
+              "hasOpenThreats": false,
+              "protocol": "TLS",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "description": "Token Based Accesse to backend",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "651e4c68-2931-4a68-bbe7-7fb2251dc0db"
+              },
+              "target": {
+                "id": "ac38d77e-5589-41ba-b971-d7b9fdaa63df"
+              },
+              "vertices": [
+                {
+                  "x": 774,
+                  "y": 214
+                }
+              ],
+              "id": "c453f61f-e6fe-48fd-81cc-8bb6965678bd",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5020543430792025,
+                    "offset": 5.66964385583037
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "HTTPS Access",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 10,
+              "hasOpenThreats": false,
+              "description": "Access to Web Portal",
+              "isEncrypted": true,
+              "protocol": "TLS",
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 812,
+                "y": 1
+              },
+              "target": {
+                "x": 789,
+                "y": 533
+              },
+              "vertices": [],
+              "id": "567681e0-df56-44a4-93b0-1dac4eee761f",
+              "z": 11,
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.7634042656238363,
+                    "offset": -1.8409554397784424
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "AWS Cloud",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "e82fb616-4c81-4f32-960c-870136c95428"
+              },
+              "target": {
+                "id": "f59a7e38-8879-4881-8db1-566d039a1ae4"
+              },
+              "vertices": [],
+              "id": "1d67e478-1303-449d-8f07-7bbe63dfe19c",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "User/Token\nAuthentication",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 12,
+              "hasOpenThreats": false,
+              "description": "MongoDB Access",
+              "protocol": "SQLish",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "ac38d77e-5589-41ba-b971-d7b9fdaa63df"
+              },
+              "target": {
+                "id": "e82fb616-4c81-4f32-960c-870136c95428"
+              },
+              "vertices": [],
+              "id": "5c98a89e-b1f2-4162-8fbd-8a8021554181",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "User Authentication",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 13,
+              "hasOpenThreats": false,
+              "description": "Authenticates Users via Username/Password or Access Token",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "1774df3c-0796-408a-8960-65535a418811"
+              },
+              "target": {
+                "id": "536c03af-148d-42b1-adf2-63875c814338"
+              },
+              "vertices": [],
+              "id": "7d4ae923-c859-472e-a684-181b5130933d",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Model Traning",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 14,
+              "hasOpenThreats": false,
+              "description": "Runs training node when machine learning models need to be re-trained.",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "e82fb616-4c81-4f32-960c-870136c95428"
+              },
+              "target": {
+                "id": "1774df3c-0796-408a-8960-65535a418811"
+              },
+              "vertices": [],
+              "id": "711114d7-0fd0-468e-a276-132ab16a77ee",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Private REST API",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 15,
+              "hasOpenThreats": false,
+              "description": "Private API provided by Analytics server to provide access to training and inference data",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "1774df3c-0796-408a-8960-65535a418811"
+              },
+              "target": {
+                "id": "824cc8bd-d3e5-43a4-9e87-fdac61e248df"
+              },
+              "vertices": [],
+              "id": "a78d0883-c4d3-45a7-b2fc-7b55c2c9e296",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "CSV Storage and\nModel Data access",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 16,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "1774df3c-0796-408a-8960-65535a418811"
+              },
+              "target": {
+                "id": "f59a7e38-8879-4881-8db1-566d039a1ae4"
+              },
+              "vertices": [],
+              "id": "d3a680af-3740-4ab3-ba3d-0df4d81aa665",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Survey Access",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 17,
+              "hasOpenThreats": false,
+              "description": "Accesses stored text data from surveys",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "536c03af-148d-42b1-adf2-63875c814338"
+              },
+              "target": {
+                "id": "824cc8bd-d3e5-43a4-9e87-fdac61e248df"
+              },
+              "vertices": [],
+              "id": "e7a3b232-de2f-4789-9231-8c76b258a63f",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Storage of data\nModel Data",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 18,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "536c03af-148d-42b1-adf2-63875c814338"
+              },
+              "target": {
+                "id": "f59a7e38-8879-4881-8db1-566d039a1ae4"
+              },
+              "vertices": [],
+              "id": "7a2a49aa-26ad-409c-8991-3ab701e48a35",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.3275210317276366,
+                    "offset": -2.1876649499175063
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "TN Survey Data",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 19,
+              "hasOpenThreats": false,
+              "description": "Survey data used for training the model",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 3257
+        }
       }
-    ],
-    "reviewer": "Michael Beale"
+    ]
   }
 }
